@@ -75,4 +75,26 @@ public class DatabaseUtil {
     public interface ResultSetMapper<T> {
         T mapRow(ResultSet rs) throws SQLException;
     }
+
+    public static List<Patient> getPatients(String searchName) throws SQLException {
+        List<Object> params = new ArrayList<>();
+        StringBuilder sql = new StringBuilder("SELECT * FROM patients");
+        if (searchName != null && !searchName.isEmpty()) {
+            sql.append(" WHERE name LIKE ?");
+            params.add("%" + searchName + "%");
+        }
+        return executeQuery(sql.toString(), params, new ResultSetMapper<Patient>() {
+            @Override
+            public Patient mapRow(ResultSet rs) throws SQLException {
+                Patient patient = new Patient();
+                patient.setId(rs.getInt("id"));
+                patient.setName(rs.getString("name"));
+                patient.setAge(rs.getInt("age"));
+                patient.setGender(rs.getString("gender"));
+                patient.setDiagnosis(rs.getString("diagnosis"));
+                patient.setRemarks(rs.getString("remarks"));
+                return patient;
+            }
+        });
+    }
 }

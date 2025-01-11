@@ -32,11 +32,34 @@ public class VitalsGraphServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        // Generate JSON data for Chart.js
         out.println(generateChartData(vitals));
     }
 
     private String generateChartData(List<Vital> vitals) {
-        // ... (implementation to generate JSON data for Chart.js)
+        StringBuilder json = new StringBuilder();
+        json.append("{");
+        json.append("\"labels\": [");
+        for (Vital vital : vitals) {
+            json.append("\"").append(vital.getRecordedAt().toString()).append("\",");
+        }
+        json.deleteCharAt(json.lastIndexOf(",")); // Remove trailing comma
+        json.append("],");
+
+        json.append("\"datasets\": [");
+        json.append("{");
+        json.append("\"label\": \"BP High\",");
+        json.append("\"data\": [");
+        for (Vital vital : vitals) {
+            json.append(vital.getBpHigh()).append(",");
+        }
+        json.deleteCharAt(json.lastIndexOf(","));
+        json.append("],");
+        json.append("\"borderColor\": \"rgba(255, 99, 132, 1)\",");
+        json.append("\"borderWidth\": 1");
+        json.append("}");
+        json.append("]");
+
+        json.append("}");
+        return json.toString();
     }
 }

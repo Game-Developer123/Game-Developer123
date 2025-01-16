@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean definition for Pen -->
+   <bean id="mymobile" class="Springcore.dependencyinjection.Mobile" >
+    <property name="id" value="1"></property>
+    <property name="name" value="vivo"></property>
+    <property name="model" value="t1"></property>
+    <property name="s" ref="mysim"></property>
+     </bean>
+    
+    <bean id="mysim" class="Springcore.dependencyinjection.Sim">
+    <property name="id" value="1"></property>
+    <property name="brand" value="airtel"></property>
+    <property name="type" value="5g"></property>
+    </bean>
+    
+    <bean id="mytelevision" class="Springcore.DIwithSI.Television">
+    <property name="rem" ref="myremote"></property>
+    
+    </bean>
+    
+    <bean id="myremote" class="Springcore.DIwithSI.Remote">
+    
+    
+    </bean>
+    
+</beans>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+	<style>
+		#a
+		{
+			display: grid;
+			grid-template-columns: 200px 200px;
+		}
+	</style>
+</head>
+<body>
+	<section class="mt-3">
+		<div class="row text-center">
+			<div class="col-4 d-grid gap-2">
+				<div class="card">
+					<div class="card-header">
+						<img src="C:\Program Files\Sublime Text 3\Html Programs\CHAITANYA\SRC\assets\six.jpg" alt="" class="img-fluid">
+					</div>
+					<div id="a" class="card-body col-6 gap-2">
+						<button id="like">Likes</button>
+						<h3><span id="in_span"></span></h3>
+					</div>
+					<div id="a" class="card-body col-6 gap-2">
+						<button id="dislike">DisLikes</button>
+						<h3><span id="de_span"></span></h3>
+					</div>
+					<div class="card-footer">
+						<h3>Total:<span id="total"></span></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		let spanTag=document.getElementById("like");
+		let spannTag=document.getElementById("like");
+		let btnTag=document.getElementById("in_span");
+		let btnnTag=document.getElementById("de_span");
+		let qty=localStorage.getItem("qty")?localStorage.getItem("qty"):0;
+		let dislike=localStorage.getItem("dislike")?localStorage.getItem("dislike"):0;
+		spanTag.innerText=qty;
+		spannTag.innerText=dislike;
+		btnTag.addEventListener('click',function()
+		{
+			qty++;
+			localStorage.setItem("qty",qty);
+			spanTag.innerText=localStorage.getItem("qty");
+		})
+		btnnTag.addEventListener('click',function()
+		{
+			qty++;
+			localStorage.setItem("qty",qty);
+			spanTag.innerText=localStorage.getItem("qty");
+		})
+	</script>
+
+</body>
+</html>

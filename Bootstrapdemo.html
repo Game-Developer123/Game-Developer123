@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Buttons Bootstrap</title>
+	<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="C:\Program Files\Sublime Text 3\Html Programs\fontawesome\FA\css\all.min.css">
+	<style>
+		.fa{
+			padding: 10px;
+		}
+		header
+{
+	background:linear-gradient(45deg,deepskyblue,darkblue,orangered);
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	align-items: center;
+}
+header>h1
+{	
+	color: white;
+}
+header>#links>a
+{
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+}
+header>#links>a:hover
+{
+	text-decoration: underline;
+}
+button
+{
+	border-radius: 50px;
+	</style>
+}
+</head>
+<body>
+	<div class="container-fluid">
+		<header>
+		<h1>Welcome To Zomato</h1>
+		<div id="links">
+			<a href="Modal.html"><button>Login</button></a>
+			<a href="Modal.html"><button>Register</button></a>
+		</div>
+	</header>
+		<h1 class="text-danger">Zomato Cart:-</h1>
+		<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<button class="btn btn-outline-danger btn-md mb-3">Order Now</button>
+	</div>
+	<div class="container-fluid">
+		<table class="table">
+			<thead class="text-center table-danger">
+				<tr>
+					<th>S.no</th>
+					<th>Image</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Qty</th>
+					<th>Total Price</th>
+				</tr>
+			</thead>
+			<tbody class="text-center">
+				<tr>
+					<td>Z101</td>
+					<td><img src="C:\Program Files\Sublime Text 3\Html Programs\CHAITANYA\SRC\assets\six.jpg" alt="" width="30px" height="30px"></td>
+					<td>Biryani</td>
+					<td>&#8377;299.00</td>
+					<td><button id="i_btn"><i class="fa fa-minus-circle"></i></button><span id="display"></span><button id="d_btn"><i id="a" class="fa fa-plus-circle"></i></button></td>
+					<td>&#8377;598.00</td>
+				</tr>
+			</tbody>
+			<tbody class="text-center">
+				<tr>
+					<td>Z101</td>
+					<td><img src="C:\Program Files\Sublime Text 3\Html Programs\CHAITANYA\SRC\assets\six.jpg" alt="" width="30px" height="30px"></td>
+					<td>Biryani</td>
+					<td>&#8377;299.00</td>
+					<td><button id="i_btn"><i class="fa fa-minus-circle"></i></button><span id="display"></span><button id="d_btn"><i id="a" class="fa fa-plus-circle"></i></button></td>
+					<td>&#8377;598.00</td>
+				</tr>
+			</tbody>
+			<tbody class="text-center">
+				<tr>
+					<td>Z101</td>
+					<td><img src="C:\Program Files\Sublime Text 3\Html Programs\CHAITANYA\SRC\assets\six.jpg" alt="" width="30px" height="30px"></td>
+					<td>Biryani</td>
+					<td>&#8377;299.00</td>
+					<td><button id="i_btn"><i class="fa fa-minus-circle"></i></button><span id="display"></span><button id="d_btn"><i id="a" class="fa fa-plus-circle"></i></button></td>
+					<td>&#8377;598.00</td>
+				</tr>
+			</tbody>
+			<tbody class="text-center">
+				<tr>
+					<td>Z101</td>
+					<td><img src="C:\Program Files\Sublime Text 3\Html Programs\CHAITANYA\SRC\assets\six.jpg" alt="" width="30px" height="30px"></td>
+					<td>Biryani</td>
+					<td>&#8377;299.00</td>
+					<td><button id="i_btn"><i class="fa fa-minus-circle"></i></button><span id="display"></span><button id="d_btn"><i id="a" class="fa fa-plus-circle"></i></button></td>
+					<td>&#8377;598.00</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script>
+		let spanTag=document.getElementById("display");
+		let btnTag=document.getElementById("d_btn");
+		let btnnTag=document.getElementById("i_btn");
+		let qty=localStorage.getItem("qty")?localStorage.getItem("qty"):0;
+		spanTag.innerText=qty;
+		btnTag.addEventListener('click',function()
+		{
+			qty++;
+			localStorage.setItem("qty",qty);
+			spanTag.innerText=localStorage.getItem("qty");
+		})
+		btnnTag.addEventListener('click',function()
+		{
+			if(qty>1) 
+				{
+					qty--;
+					localStorage.setItem("qty",qty);
+					spanTag.innerText=localStorage.getItem("qty");
+				}
+			else 
+			{
+				qty=1;
+				localStorage.setItem("qty",qty);
+				spanTag.innerText=localStorage.getItem("qty");
+			}
+		})
+	</script>
+</body>
+</html>

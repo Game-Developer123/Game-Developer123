@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row m-auto">
+			<div class="col-md-6 m-auto">
+				<div class="card">
+					<div class="card-header bg-info">
+						<h1>LoginForm</h1>
+					</div>
+					<div class="card-body">
+						<form id="login-form">
+							<div class="form-group">
+								<input type="text" name="" placeholder="Enter Username" class="form-control" id="usernamebox">
+							</div>
+							<div class="form-group mt-2">
+								<input type="password" name="" placeholder="Enter Password" class="form-control" id="passwordbox">
+							</div>
+							<div class="form-group mt-2">
+								<input type="submit" name="" class="btn btn-primary" id="sbox">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		let formTag=document.getElementById("login-form");
+		let usnbox=document.getElementById("usernamebox");
+		let pwbox=document.getElementById("passwordbox");
+		formTag.addEventListener('submit',function()
+		{
+			event.preventDefault();
+			let username=usnbox.value;
+			let password=pwbox.value;
+			console.log(`Enter Username is ${username}`);
+			console.log(`Enter password is ${password}`);
+		})
+	</script>
+
+</body>
+</html>

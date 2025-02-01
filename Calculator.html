@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="card">
+					<div class="card-header bg-info">
+						<h1>Calculator</h1>
+					</div>
+					<div class="card-body">
+						<form id="login-form">
+							<div class="form-group">
+								<input type="text" name="" placeholder="Enter A Value" class="form-control" id="a_box">
+							</div>
+							<div class="form-group mt-2">
+								<input type="text6" name="" placeholder="Enter B Value" class="form-control" id="b_box">
+							</div>
+						</form>
+						<div class="row">
+							<div class="card-body col-3 gap-2">
+								<button id="plus">+</button>
+							</div>
+							<div class="card-body col-3 gap-2">
+								<button id="minus">-</button>
+							</div>
+							<div class="card-body col-3 gap-2">
+								<button id="Mul">*</button>
+							</div>
+							<div class="card-body col-3 gap-2">
+								<button id="div">/</button>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer">
+						<h3><span id="total"></span></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		let spanTag=document.getElementById("total");
+		let formTag=document.getElementById("login-form");
+		let abox=document.getElementById("a_box");
+		let bbox=document.getElementById("b_box");
+		let plusTag=document.getElementById("plus");
+		let minusTag=document.getElementById("minus");
+		let MulTag=document.getElementById("Mul");
+		let divTag=document.getElementById("div");
+		let totalTag=document.getElementById("total");
+		formTag.addEventListener('submit',function()
+		{
+			event.preventDefault();
+			let username=usnbox.value;
+			let password=pwbox.value;
+			console.log(`Enter Username is ${username}`);
+			console.log(`Enter password is ${password}`);
+		})
+		let qtn=localStorage.getItem("qtn")?localStorage.getItem("qtn"):0;
+		spanTag.innerText=qtn;
+		plusTag.addEventListener('click',function()
+		{
+			let c=a+b;
+			localStorage.setItem("qtn",c);
+			spanTag.innerText=localStorage.getItem("qtn");
+		})
+		totalTag.innerText=
+	</script>
+
+</body>
+</html>
